@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 
 class CrossAttention(nn.Module):
-    """ Multi-head attention to increase model expressivitiy """
     def __init__(self, config={}):
         super().__init__()
 

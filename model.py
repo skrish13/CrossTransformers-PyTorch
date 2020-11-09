@@ -44,10 +44,10 @@ class CrossAttention(nn.Module):
         support_value = support_value.view(support_value.shape[0], support_value.shape[1], -1)
 
         ## dot product over every query and key features
-        scores = torch.einsum('bdu,ndv->bnuv', query, key) / dk**.5
+        attn_weights = torch.einsum('bdu,ndv->bnuv', query, key) / dk**.5
         ## sum over support set length 'n' and all feature vectors 'v' in each support image
-        attn_weights = torch.nn.functional.softmax(scores, dim=3)
-        attn_weights = torch.nn.functional.softmax(scores, dim=1)
+        attn_weights = torch.nn.functional.softmax(attn_weights, dim=3)
+        attn_weights = torch.nn.functional.softmax(attn_weights, dim=1)
         ## sum over support set length 'n' and all feature vectors 'v' in each support image
         query_aligned = torch.einsum('bnuv,ndv->bdv', attn_weights, support_value)
 

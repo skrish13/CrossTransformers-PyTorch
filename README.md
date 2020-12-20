@@ -17,6 +17,8 @@ Unofficial PyTorch implementation
 - Resnet34, output feature map 14x14 by using dilated conv
 - Higher image resolution (224x224)
 - Strong data augmentation following [2]
+- Normalized gradient descent
+- 50% episodes of uniform category sampling
 
 ## TODO
 

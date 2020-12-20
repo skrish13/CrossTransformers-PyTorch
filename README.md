@@ -19,6 +19,7 @@ Unofficial PyTorch implementation
 - Strong data augmentation following [2]
 - Normalized gradient descent
 - 50% episodes of uniform category sampling
+- First step: Pretraining feature extractor on train categories, early stop by linear classifier accuracy on validation categories.
 
 ## TODO
 
